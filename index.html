@@ -7,9 +7,8 @@
 <body style="margin:0">
     <div id="toolbar">
         <div id="rad">
-            Radius <span id="radval">10</span>
-            <div id="decrad" class="radcontrol oval">-</div>
-            <div id="incrad" class="radcontrol oval">+</div>
+            <input type="range" 
+            value="10" id="slider" oninput="setRadius(this.value)">
         </div>
         <div id="colors">
         </div>
