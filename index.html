@@ -8,13 +8,14 @@
     <div id="toolbar">
         <div id="rad">
             Radius <span id="radval">10</span>
-            <div id="decrad" class="radcontrol">-</div>
-            <div id="incrad" class="radcontrol">+</div>
+            <div id="decrad" class="radcontrol oval">-</div>
+            <div id="incrad" class="radcontrol oval">+</div>
         </div>
         <div id="colors">
         </div>
-        <div id="download">
-            Download
+        <div id="download" class='oval'>
+            <a download="YourMasterPiece.png"
+            href="#" onclick="this.href=document.getElementById('canvas').toDataURL()">Download</a>
         </div>
         
     </div>
@@ -24,5 +25,6 @@
     <script src="main.js"></script>
     <script src="radius.js"></script>
     <script src="colors.js"></script>
+    <script src="save.js"></script>
 </body>
 </html>

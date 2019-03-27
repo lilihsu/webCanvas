@@ -10,6 +10,11 @@
     -ms-user-select: none;
 }
 
+a:link, a:visited, a:hover, a:active{
+    color: black;
+    text-decoration:none;
+}
+
 #toolbar{
     width: 100%;
     height: 50px;
@@ -19,6 +24,7 @@
     background-color: rgba(64, 48, 99, 0.9);
     color:white;
 }
+
 .radcontrol{
     width: 30px;
     height: 30px;
@@ -34,6 +40,13 @@
 
 #colors{
     float: right;
+}
+
+div.oval{
+    border-radius: 5px;
+    box-shadow: inset 0px 1px 0px rgba(255,255,255,0.5), 0px 2px 2px
+    rgba(0,0,0,0.5);
+    margin-left: 10px;
 }
 
 .swatch{
