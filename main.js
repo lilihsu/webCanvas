@@ -15,7 +15,7 @@ var draw = function(e){
     if(type_pen){
         if(dragging){
             console.log("pen");
-            ctx.globalCompositieOperation= "source-over";
+            ctx.globalCompositieOperation= "source-over b";
             ctx.lineTo(e.offsetX,e.offsetY);
             ctx.stroke();
             ctx.beginPath();
