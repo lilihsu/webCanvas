@@ -65,23 +65,24 @@ div.oval{
     box-shadow: inset 0px 1px 2px rgba(0,0,0,0.5);
 }
 
-#download{
+.button{
     height: 30px;
     width: 70px;
     padding: 8px;
     display: inline-block;
     background-color: aquamarine;
     margin-right: 20px;
-    float:right;
     text-align: center;
     color:black;
 }
 
-#download:hover{
+.button:hover{
     
     background-color: rgb(188, 248, 228);
     color:white;
 }
+
+
 
 #canvas{
     margin: 40px 20px;

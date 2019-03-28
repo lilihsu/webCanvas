@@ -11,11 +11,16 @@
             <input type="range" 
             value="10" id="slider" oninput="setRadius(this.value)">
         </div>
-        <div id="colors">
+        <div id="colors" >
         </div>
-        
+        <div id="eraser" class="button oval">
+            eraser
+        </div>
+        <div id="pen" class="button oval">
+            pen
+        </div>
         <input type="color" oninput="ctx.fillStyle = this.value;ctx.strokeStyle=this.value;" style="height:35px" placeholder=" Other colours">
-        <div id="download" class='oval'>
+        <div id="download" class='oval button'>
             <a download="YourMasterPiece.png"
             href="#" onclick="this.href=document.getElementById('canvas').toDataURL()">Save</a>
         </div>
