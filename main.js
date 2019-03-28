@@ -9,14 +9,29 @@ canvas.height = window.innerHeight*0.6;
 ctx.lineWidth= radius*2;
 
 var draw = function(e){
-    if(dragging){
-        ctx.lineTo(e.clientX,e.clientY);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(e.clientX,e.clientY,radius,0,Math.PI*2);
-        ctx.fill();
-        ctx.beginPath();
-        ctx.moveTo(e.clientX,e.clientY);
+    if(type_pen){
+        if(dragging){
+            ctx.lineTo(e.offsetX,e.offsetY);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(e.offsetX,e.offsetY,radius,0,Math.PI*2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.moveTo(e.offsetX,e.offsetY);
+        }
+    }
+    else if(type_erase){
+        if(dragging){
+            ctx.lineTo(e.offsetX,e.offsetY);
+            ctx.stroke();
+            ctx.globalCompositieOperation= source-over;
+            ctx.beginPath();
+            ctx.arc(e.offsetX,e.offsetY,radius,0,Math.PI*2);
+            ctx.globalCompositeOperation = destination-out;
+            ctx.fill();
+            ctx.beginPath();
+            ctx.moveTo(e.offsetX,e.offsetY);
+        }
     }
     
 }

@@ -13,12 +13,17 @@
         </div>
         <div id="colors">
         </div>
+        
+        <input type="color" oninput="ctx.fillStyle = this.value;ctx.strokeStyle=this.value;" style="height:35px" placeholder=" Other colours">
         <div id="download" class='oval'>
             <a download="YourMasterPiece.png"
-            href="#" onclick="this.href=document.getElementById('canvas').toDataURL()">Download</a>
+            href="#" onclick="this.href=document.getElementById('canvas').toDataURL()">Save</a>
         </div>
         
     </div>
+    <br>
+    <br>
+
     <canvas id="canvas" stlye="display:inline">
         Sorry, your browser doesn't support HTML5.
     </canvas>
@@ -26,5 +31,7 @@
     <script src="radius.js"></script>
     <script src="colors.js"></script>
     <script src="save.js"></script>
+    <script src="eraser.js"></script>
+    <script src="pen.js"></script>
 </body>
 </html>
