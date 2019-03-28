@@ -6,6 +6,7 @@ var dragging=false;
 
 var type_pen=true;
 var type_erase=false;
+var type_font=false;
 
 canvas.width = window.innerWidth - 60;
 canvas.height = window.innerHeight*0.6;
@@ -15,7 +16,7 @@ var draw = function(e){
     if(type_pen){
         if(dragging){
             console.log("pen");
-            ctx.globalCompositieOperation= "source-over b";
+            ctx.globalCompositeOperation= "source-over";
             ctx.lineTo(e.offsetX,e.offsetY);
             ctx.stroke();
             ctx.beginPath();
@@ -34,13 +35,19 @@ var draw = function(e){
             ctx.beginPath();
             ctx.arc(e.offsetX,e.offsetY,radius,0,Math.PI*2);
             ctx.fill();
-            ctx.globalCompositieOperation= "source-over";
+            ctx.globalCompositeOperation= "source-over";
             ctx.beginPath();
             ctx.moveTo(e.offsetX,e.offsetY);
             
         }
     }
-    
+    else if(type_font)
+    {
+        if(dragging){
+            ctx.font= radius+"px"+" "+selectfont.value;
+            ctx.fillText(input_text.value,e.offsetX,e.offsetY);
+        }
+    }
 }
 
 var engage = function(e){
@@ -56,3 +63,24 @@ var disengage = function(){
 canvas.addEventListener('mousedown', engage);
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseup', disengage);
+
+//reset
+
+var reset=document.getElementById('reset');
+reset.addEventListener('click',function(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+})
+
+
+//font
+var text=document.getElementById('text');
+var selectfont=document.getElementById('selectfont');
+var input_text=document.getElementById('input_text');
+
+text.addEventListener('click',function(){
+    type_erase=false;
+    type_pen=false;
+    type_font=true;
+    document.body.style.cursor="url('text.png'), default";
+}
+)

@@ -7,7 +7,7 @@
 <body style="margin:0">
     <div id="toolbar">
         <div id="rad">
-            <div>Brush Size</div>
+            <div>All Size</div>
             <input type="range" 
             value="10" id="slider" oninput="setRadius(this.value)">
         </div>
@@ -19,12 +19,23 @@
         <div id="pen" class="button oval">
             pen
         </div>
-        <input type="color" oninput="ctx.fillStyle = this.value;ctx.strokeStyle=this.value;" style="height:35px" placeholder=" Other colours">
+        <input type="color" oninput="ctx.fillStyle = this.value;ctx.strokeStyle=this.value;" 
+        style="height:35px" placeholder=" Other colours">
         <div id="download" class='oval button'>
             <a download="YourMasterPiece.png"
             href="#" onclick="this.href=document.getElementById('canvas').toDataURL()">Save</a>
         </div>
-        
+        <div id="reset" class="button oval">
+            Reset
+        </div>
+        <div id="text" class='oval button'>
+            Text
+        </div>
+        <input id="input_text" type="text" value="type here">
+        <select id="selectfont">
+            <option value="Chiller">chiller</option>
+            <option value="Arial">Arial</option>
+        </select>
     </div>
     <br>
     <br>
