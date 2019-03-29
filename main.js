@@ -7,6 +7,7 @@ var dragging=false;
 var type_pen=true;
 var type_erase=false;
 var type_font=false;
+var type_img=false;
 
 canvas.width = window.innerWidth - 60;
 canvas.height = window.innerHeight*0.6;
@@ -48,6 +49,12 @@ var draw = function(e){
             ctx.fillText(input_text.value,e.offsetX,e.offsetY);
         }
     }
+    else if(type_img)
+    {
+        if(dragging){
+            ctx.drawImage(img,e.offsetX,e.offsetY,radius,radius);
+        }
+    }
 }
 
 var engage = function(e){
@@ -80,7 +87,38 @@ var input_text=document.getElementById('input_text');
 text.addEventListener('click',function(){
     type_erase=false;
     type_pen=false;
+    type_img=false;
     type_font=true;
     document.body.style.cursor="url('text.png'), default";
 }
 )
+
+
+//upload image
+var imgButton=document.getElementById('img_button');
+var imageLoader = document.getElementById('imageLoader');
+ 
+var img = new Image();
+var reader = new FileReader();
+
+imageLoader.addEventListener('change', handleImage, false);
+
+function handleImage(e){
+    
+    reader.onload = function(event){
+        
+        
+        img.src = event.target.result;
+    }
+    reader.readAsDataURL(e.target.files[0]);     
+}
+
+
+
+imgButton.addEventListener('click',function(){
+    type_erase=false;
+    type_pen=false;
+    type_font=false;
+    type_img=true;
+})
+
