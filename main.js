@@ -199,8 +199,8 @@ var triangle=document.getElementById('triangle');
 //store
 function Store(){
     step++;
-    if(step<storeArray.lenth){
-        storeArray.lenth=step;
+    if(step<storeArray.length){
+        storeArray.length=step;
     }
     storeArray.push(canvas.toDataURL());
 }
