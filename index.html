@@ -14,10 +14,10 @@
         <div id="colors" >
         </div>
         <div id="eraser" class="button oval">
-            eraser
+            Eraser
         </div>
         <div id="pen" class="button oval">
-            pen
+            Pen
         </div>
         <input type="color" oninput="ctx.fillStyle = this.value;ctx.strokeStyle=this.value;" 
         style="height:35px" placeholder=" Other colours">
@@ -47,6 +47,21 @@
         Img
     </div>
     <input type="file" id="imageLoader" name="imageLoader"/>
+    <div id="rect" class='oval button'>
+        Rect
+    </div>
+    <div id="circle" class='oval button'>
+        Circle
+    </div>
+    <div id="triangle" class='oval button'>
+        Triangle
+    </div>
+    <div id="undo" class='oval button'>
+        Undo
+    </div>
+    <div id="redo" class='oval button'>
+        Redo
+    </div>
     <script src="main.js"></script>
     <script src="radius.js"></script>
     <script src="colors.js"></script>
