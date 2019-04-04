@@ -17,8 +17,8 @@ var type_rect=false;
 var type_trian=false;
 var type_circle=false;
 
-canvas.width = window.innerWidth - 60;
-canvas.height = window.innerHeight*0.6;
+canvas.width = window.innerWidth*0.97;
+canvas.height = window.innerHeight*0.78;
 ctx.lineWidth= radius*2;
 
 var draw = function(e){
@@ -112,6 +112,8 @@ canvas.addEventListener('mouseover', overDisengage);
 var reset=document.getElementById('reset');
 reset.addEventListener('click',function(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
+    step=-1;
+    storeArray.length=0;
 })
 
 
@@ -150,6 +152,7 @@ function handleImage(e){
         img.src = event.target.result;
     }
     reader.readAsDataURL(e.target.files[0]);     
+    document.body.style.cursor="crosshair";
 }
 
 imgButton.addEventListener('click',function(){
@@ -160,6 +163,7 @@ imgButton.addEventListener('click',function(){
     type_trian=false;
     type_circle=false;
     type_img=true;
+    document.body.style.cursor="crosshair";
 })
 
 //rect
@@ -172,6 +176,7 @@ var rect=document.getElementById('rect');
         type_trian=false;
         type_circle=false;
         type_img=false;
+        document.body.style.cursor="crosshair";
     })
 // circle
 
@@ -184,6 +189,7 @@ var circle=document.getElementById('circle');
         type_trian=false;
         type_circle=true;
         type_img=false;
+        document.body.style.cursor="crosshair";
     })
 //triangle
 var triangle=document.getElementById('triangle');
@@ -195,6 +201,7 @@ var triangle=document.getElementById('triangle');
         type_trian=true;
         type_circle=false;
         type_img=false;
+        document.body.style.cursor="crosshair";
     })
 //store
 function Store(){

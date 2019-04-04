@@ -5,9 +5,9 @@
     <link rel="stylesheet" href="master.css"></link>
 </head>
 <body style="margin:0">
-    <div id="toolbar">
+    <div class="toolbar">
         <div id="rad">
-            <div>All Size</div>
+            <div>Size</div>
             <input type="range" 
             value="10" id="slider" oninput="setRadius(this.value)">
         </div>
@@ -23,7 +23,7 @@
         style="height:35px" placeholder=" Other colours">
         <div id="download" class='oval button'>
             <a download="YourMasterPiece.png"
-            href="#" onclick="this.href=document.getElementById('canvas').toDataURL()">Save</a>
+            href="#" onclick="this.href=document.getElementById('canvas').toDataURL()" id="save">Save</a>
         </div>
         <div id="reset" class="button oval">
             Reset
@@ -43,24 +43,26 @@
     <canvas id="canvas" stlye="display:inline">
         Sorry, your browser doesn't support HTML5.
     </canvas>
-    <div id="img_button" class='oval button'>
-        Img
-    </div>
-    <input type="file" id="imageLoader" name="imageLoader"/>
-    <div id="rect" class='oval button'>
-        Rect
-    </div>
-    <div id="circle" class='oval button'>
-        Circle
-    </div>
-    <div id="triangle" class='oval button'>
-        Triangle
-    </div>
-    <div id="undo" class='oval button'>
-        Undo
-    </div>
-    <div id="redo" class='oval button'>
-        Redo
+    <div class="footer">
+        <div id="img_button" class='oval button'>
+            Image
+        </div>
+        <input type="file" id="imageLoader" name="imageLoader"/>
+        <div id="rect" class='oval button'>
+            Rectangle
+        </div>
+        <div id="circle" class='oval button'>
+            Circle
+        </div>
+        <div id="triangle" class='oval button'>
+            Triangle
+        </div>
+        <div id="undo" class='oval button'>
+            Undo
+        </div>
+        <div id="redo" class='oval button'>
+            Redo
+        </div>
     </div>
     <script src="main.js"></script>
     <script src="radius.js"></script>

@@ -15,7 +15,7 @@ a:link, a:visited, a:hover, a:active{
     text-decoration:none;
 }
 
-#toolbar{
+.toolbar{
     width: 100%;
     height: 50px;
     position: fixed;
@@ -67,13 +67,22 @@ div.oval{
 
 .button{
     height: 30px;
-    width: 70px;
+    width: 75px;
     padding: 8px;
     display: inline-block;
-    background-color: aquamarine;
+    background-color:#E0E3DA;
     margin-right: 2px;
     text-align: center;
-    color:black;
+    color:#566270;
+    font-family:chiller;
+}
+#save{
+    color:#566270;
+    font-family:chiller;
+}
+#save:hover{
+    background-color: rgb(188, 248, 228);
+    color:white;
 }
 
 .button:hover{
@@ -87,6 +96,21 @@ div.oval{
 #canvas{
     margin: 40px 20px;
     position: relative;
-    
+  
     border:2px solid #222222;
-  }
+}
+
+.footer {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background: rgba(64, 48, 99, 0.9);
+    padding: 10px;
+    position:fixed;
+    bottom: 0px;
+}
+
+body {
+    margin: 0 auto;
+}   
+  
